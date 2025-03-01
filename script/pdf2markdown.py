@@ -121,9 +121,6 @@ class PDF2MarkdownLLM:
         print(f"Markdown形式のドキュメントを {self.output_path / 'output_by_llm.md'} に保存しました。")
 
 
-
-
-
 class PDF2MarkdownAzureDI:
     """PDFドキュメントをAzure Document Intelligenceを使ってmarkdown形式に変換するクラス"""
 
