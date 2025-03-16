@@ -113,5 +113,8 @@ dmypy.json
 cython_debug/
 
 # Data and output folders
-data/
-output/ 
+data/*
+!data/
+output/*
+!output/
+sandbox/
