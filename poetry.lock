@@ -1674,13 +1674,13 @@ tenacity = ">=8.1.0,<8.4.0 || >8.4.0,<9.0.0"
 
 [[package]]
 name = "langchain-core"
-version = "0.3.50"
+version = "0.3.51"
 description = "Building applications with LLMs through composability"
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "langchain_core-0.3.50-py3-none-any.whl", hash = "sha256:76b7ff99125d160427801ea47c4b5202363856603e8382208a889fdd914d7d4d"},
-    {file = "langchain_core-0.3.50.tar.gz", hash = "sha256:8e141b89f2be6020e94c32d7d5141fc6eb5acf1e04e4d80ebd2c74bf30de9f77"},
+    {file = "langchain_core-0.3.51-py3-none-any.whl", hash = "sha256:4bd71e8acd45362aa428953f2a91d8162318014544a2216e4b769463caf68e13"},
+    {file = "langchain_core-0.3.51.tar.gz", hash = "sha256:db76b9cc331411602cb40ba0469a161febe7a0663fbcaddbc9056046ac2d22f4"},
 ]
 
 [package.dependencies]
@@ -1713,17 +1713,17 @@ tiktoken = ">=0.7,<1"
 
 [[package]]
 name = "langchain-text-splitters"
-version = "0.3.6"
+version = "0.3.8"
 description = "LangChain text splitting utilities"
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "langchain_text_splitters-0.3.6-py3-none-any.whl", hash = "sha256:e5d7b850f6c14259ea930be4a964a65fa95d9df7e1dbdd8bad8416db72292f4e"},
-    {file = "langchain_text_splitters-0.3.6.tar.gz", hash = "sha256:c537972f4b7c07451df431353a538019ad9dadff7a1073ea363946cea97e1bee"},
+    {file = "langchain_text_splitters-0.3.8-py3-none-any.whl", hash = "sha256:e75cc0f4ae58dcf07d9f18776400cf8ade27fadd4ff6d264df6278bb302f6f02"},
+    {file = "langchain_text_splitters-0.3.8.tar.gz", hash = "sha256:116d4b9f2a22dda357d0b79e30acf005c5518177971c66a9f1ab0edfdb0f912e"},
 ]
 
 [package.dependencies]
-langchain-core = ">=0.3.34,<1.0.0"
+langchain-core = ">=0.3.51,<1.0.0"
 
 [[package]]
 name = "langgraph"
@@ -4122,4 +4122,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "d7123f09f8ce5d7cbc54a001b395355fe3888b9441be7fbf101ac1c9a125378f"
+content-hash = "9ff11c3e42b764b33bb4466ba2365e82e9ffe8abee9bbb08e0cb6f77b15b7b9f"

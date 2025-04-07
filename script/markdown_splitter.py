@@ -1,4 +1,4 @@
-from langchain.text_splitter import MarkdownHeaderTextSplitter
+from langchain_text_splitters.markdown import MarkdownHeaderTextSplitter
 
 def split_markdown_with_langchain(markdown_text, max_chunk_size=1800):
     # ヘッダーレベルとその分割設定
@@ -8,9 +8,10 @@ def split_markdown_with_langchain(markdown_text, max_chunk_size=1800):
         ("###", "header3"),
     ]
     
-    # MarkdownHeaderTextSplitterでヘッダーに基づいて分割
+    # MarkdownHeaderTextSplitterでヘッダーに基づいて分割（ヘッダーを残す）
     markdown_splitter = MarkdownHeaderTextSplitter(
-        headers_to_split_on=headers_to_split_on
+        headers_to_split_on=headers_to_split_on,
+        strip_headers=False  # ヘッダーをテキスト内に残す
     )
     header_splits = markdown_splitter.split_text(markdown_text)
     
@@ -19,15 +20,8 @@ def split_markdown_with_langchain(markdown_text, max_chunk_size=1800):
     current_chunk = ""
     
     for doc in header_splits:
-        # メタデータからヘッダー情報を取得
-        header_info = ""
-        for header_level in ["header1", "header2", "header3"]:
-            if header_level in doc.metadata and doc.metadata[header_level]:
-                level_num = int(header_level[-1])
-                header_info += "#" * level_num + " " + doc.metadata[header_level] + "\n"
-        
-        # セクションの内容を取得（ヘッダー + 内容）
-        section_content = header_info + doc.page_content
+        # セクションの内容を取得（ヘッダーは既に含まれている）
+        section_content = doc.page_content
         
         # 現在のチャンクにセクションを追加するとサイズを超えるかチェック
         if len(current_chunk) + len(section_content) <= max_chunk_size:
@@ -58,13 +52,13 @@ def main():
     これは小見出しの下の段落です。長い文章が続きます...
     """
 
-    chunks = split_markdown_with_langchain(markdown_text)
+    chunks = split_markdown_with_langchain(markdown_text, max_chunk_size=30)
     for i, chunk in enumerate(chunks):
         print(f"チャンク {i+1}:")
         print(chunk)
         print(f"チャンクサイズ: {len(chunk)} 文字")
         print("-" * 50)
-        
+
         
 if __name__ == "__main__":
     main()

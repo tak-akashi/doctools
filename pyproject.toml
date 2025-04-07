@@ -16,6 +16,7 @@ langchain-openai = "^0.3.7"
 azure-ai-documentintelligence = "^1.0.0"
 langgraph = "^0.3.2"
 langchain-core = "^0.3.50"
+langchain-text-splitters = "^0.3.8"
 
 
 [build-system]
